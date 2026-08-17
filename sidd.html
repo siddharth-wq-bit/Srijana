@@ -1,0 +1,612 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Just for Srijana ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:#fff5f7;
+    color:#3d3033;
+}
+
+/* soft background */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    background:#ffd6df;
+    border-radius:50%;
+    top:-150px;
+    left:-120px;
+    filter:blur(20px);
+    opacity:.7;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:300px;
+    height:300px;
+    background:#ead8ff;
+    border-radius:50%;
+    bottom:-150px;
+    right:-100px;
+    filter:blur(20px);
+    opacity:.7;
+}
+
+/* slides */
+
+.slide{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:22px;
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateX(25px);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+.slide.active{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateX(0);
+}
+
+/* card */
+
+.card{
+    position:relative;
+    z-index:2;
+
+    width:min(92%,470px);
+
+    padding:38px 28px;
+
+    background:rgba(255,255,255,.82);
+
+    border-radius:24px;
+
+    box-shadow:
+        0 15px 40px rgba(80,45,55,.12);
+
+    border:1px solid #f6dfe4;
+
+    text-align:center;
+}
+
+/* little handwritten feeling */
+
+.note{
+    font-family:"Comic Sans MS","Segoe Print",cursive;
+    color:#777;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.heart{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+h1{
+    font-family:"Comic Sans MS","Segoe Print",cursive;
+    color:#d94b70;
+    font-size:36px;
+    margin-bottom:18px;
+}
+
+h2{
+    font-size:23px;
+    color:#49383d;
+    margin:15px 0;
+}
+
+p{
+    font-size:17px;
+    line-height:1.8;
+    margin:14px 0;
+    color:#5b4b50;
+}
+
+.highlight{
+    color:#d94b70;
+    font-weight:bold;
+}
+
+button{
+    border:none;
+    padding:13px 25px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+    transition:.25s;
+}
+
+.next,
+.yes{
+    background:#d94b70;
+    color:white;
+    box-shadow:0 6px 15px rgba(217,75,112,.25);
+}
+
+.next:hover,
+.yes:hover{
+    transform:translateY(-2px);
+    box-shadow:0 9px 20px rgba(217,75,112,.3);
+}
+
+.no{
+    background:#f1e7e9;
+    color:#806d72;
+    position:relative;
+}
+
+/* tiny hearts */
+
+.float-heart{
+    position:fixed;
+    color:#e9879e;
+    opacity:.45;
+    pointer-events:none;
+    animation:up 7s linear forwards;
+    z-index:1;
+}
+
+@keyframes up{
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.5;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(20deg);
+        opacity:0;
+    }
+}
+
+/* final */
+
+.final-heart{
+    font-size:70px;
+    animation:smallBeat 1.4s infinite;
+}
+
+@keyframes smallBeat{
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+.final h1{
+    font-size:42px;
+}
+
+.signature{
+    margin-top:25px;
+    font-family:"Comic Sans MS","Segoe Print",cursive;
+    color:#8c7078;
+    font-size:16px;
+}
+
+.dots{
+    margin-top:20px;
+    color:#d9b7c0;
+    letter-spacing:5px;
+}
+
+/* mobile */
+
+@media(max-width:500px){
+
+    .card{
+        padding:32px 22px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    h2{
+        font-size:21px;
+    }
+
+    p{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= SLIDE 1 ================= -->
+
+<div class="slide active" id="slide1">
+
+<div class="card">
+
+<div class="note">
+okay... thoda awkward hai 😅
+</div>
+
+<div class="heart">
+❤️
+</div>
+
+<h1>Hey Srijana...</h1>
+
+<p>
+Mujhe actually samajh nahi aa raha
+ki ye kaise start karun.
+</p>
+
+<p>
+Isliye seedha bol deta hoon...
+</p>
+
+<h2>
+Mujhe tumse kuch kehna hai.
+</h2>
+
+<button class="next" onclick="nextSlide(2)">
+Aage dekho →
+</button>
+
+<div class="dots">• • • •</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= SLIDE 2 ================= -->
+
+<div class="slide" id="slide2">
+
+<div class="card">
+
+<div class="note">
+I've been thinking about this for a while...
+</div>
+
+<div class="heart">
+💗
+</div>
+
+<h1>Srijana,</h1>
+
+<p>
+Pata nahi tumne notice kiya hai ya nahi,
+but tumse baat karna mujhe genuinely
+bahut achha lagta hai.
+</p>
+
+<p>
+Kabhi kabhi bina kisi reason ke
+phone check karta hoon,
+shayad tumhara message aaya ho. :)
+</p>
+
+<p>
+Aur tumhari ek chhoti si smile bhi
+mera mood better kar deti hai.
+</p>
+
+<p class="highlight">
+Maybe that's when I realised
+you're kinda special to me.
+</p>
+
+<button class="next" onclick="nextSlide(3)">
+Ek aur baat... →
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= SLIDE 3 ================= -->
+
+<div class="slide" id="slide3">
+
+<div class="card">
+
+<div class="note">
+okay, ab thoda serious...
+</div>
+
+<div class="heart">
+💕
+</div>
+
+<h1>Honestly...</h1>
+
+<p>
+Main perfect words dhundhne ki koshish
+kar raha tha, but shayad simple bolna
+hi better hai.
+</p>
+
+<p>
+<strong>
+I like you, Srijana.
+</strong>
+</p>
+
+<p>
+Kaafi zyada.
+</p>
+
+<p>
+Aur haan, ye website banane mein
+thoda time laga hai...
+so please hasi mat udaana. 😂
+</p>
+
+<p>
+Bas dil ki baat thi,
+tum tak pahunchani thi.
+</p>
+
+<button class="next" onclick="nextSlide(4)">
+Last page ❤️
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= SLIDE 4 ================= -->
+
+<div class="slide" id="slide4">
+
+<div class="card">
+
+<div class="note">
+So... here goes nothing. 🙈
+</div>
+
+<div class="heart">
+❤️
+</div>
+
+<h1>Srijana...</h1>
+
+<h2>
+Will you be mine?
+</h2>
+
+<p>
+Mujhe nahi pata future mein
+exactly kya hoga.
+</p>
+
+<p>
+Bas itna pata hai ki
+agar tum saath ho,
+toh I would really like
+to find out. ❤️
+</p>
+
+<button class="yes" onclick="yesClicked()">
+Yes ❤️
+</button>
+
+<button class="no"
+id="noBtn"
+onclick="moveNo()"
+onmouseover="moveNo()">
+No
+</button>
+
+<p class="note">
+(no button thoda nervous hai 😭)
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= FINAL ================= -->
+
+<div class="slide" id="final">
+
+<div class="card">
+
+<div class="final-heart">
+🥹❤️
+</div>
+
+<h1>
+Srijana...
+</h1>
+
+<h2>
+Thank you for saying yes. ❤️
+</h2>
+
+<p>
+Sach bolun toh,
+ye page banate waqt bhi
+main soch raha tha ki
+"pata nahi uska reaction kya hoga." 😂
+</p>
+
+<p>
+But now I'm just smiling.
+</p>
+
+<p>
+Let's take this one day at a time,
+make stupid memories,
+laugh at random things,
+and just enjoy having each other.
+</p>
+
+<p class="highlight">
+I'm really glad it's you.
+</p>
+
+<div class="signature">
+— someone who likes you a little too much ❤️
+</div>
+
+<div class="dots">
+• • •
+</div>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* ================= SLIDE CHANGE ================= */
+
+function nextSlide(number){
+
+    document
+        .querySelectorAll(".slide")
+        .forEach(function(slide){
+            slide.classList.remove("active");
+        });
+
+    document
+        .getElementById("slide" + number)
+        .classList.add("active");
+}
+
+
+/* ================= YES ================= */
+
+function yesClicked(){
+
+    document
+        .querySelectorAll(".slide")
+        .forEach(function(slide){
+            slide.classList.remove("active");
+        });
+
+    document
+        .getElementById("final")
+        .classList.add("active");
+
+    // small heart celebration
+    for(let i=0;i<20;i++){
+
+        setTimeout(function(){
+            createHeart();
+        }, i*120);
+
+    }
+}
+
+
+/* ================= NO BUTTON ================= */
+
+function moveNo(){
+
+    const button =
+        document.getElementById("noBtn");
+
+    const x =
+        Math.random()*180 - 90;
+
+    const y =
+        Math.random()*130 - 65;
+
+    button.style.transform =
+        "translate(" + x + "px," + y + "px)";
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "float-heart";
+
+    const symbols = [
+        "♡",
+        "♥",
+        "♡",
+        "♥",
+        "❤"
+    ];
+
+    heart.innerHTML =
+        symbols[
+            Math.floor(Math.random()*symbols.length)
+        ];
+
+    heart.style.left =
+        Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+        (14 + Math.random()*18) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random()*4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+        heart.remove();
+    },9000);
+}
+
+
+/* create hearts slowly */
+
+setInterval(createHeart,900);
+
+</script>
+
+</body>
+</html>
+```
